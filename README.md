@@ -6,7 +6,8 @@ Welcome! This is the official roadmap repository for Home Assistant, maintained 
 
 This repository tracks strategic opportunities, initiatives, and development areas for the Home Assistant project. The roadmap is managed by the Open Home Foundation product team, who monitor community feature requests and translate them into actionable opportunities.
 
-> [!IMPORTANT] > **This repository is restricted to Open Home Foundation staff and authorized contributors only.**
+> [!IMPORTANT]
+> **This repository is restricted to Open Home Foundation staff and authorized contributors only.**
 >
 > Community members should submit feature requests to the [Feature Requests repository](https://github.com/home-assistant/feature-requests), where they will be reviewed by the product team and potentially incorporated into roadmap opportunities.
 >
