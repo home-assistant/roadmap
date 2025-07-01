@@ -1,0 +1,74 @@
+name: Restrict issue creation to organization members
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  check-membership:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Check if issue creator is org member
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueCreator = context.payload.issue.user.login;
+            const org = context.repo.owner;
+            
+            console.log(`Checking if ${issueCreator} is a member of ${org}`);
+            
+            try {
+              // Check if user is an organization member
+              await github.rest.orgs.checkMembershipForUser({
+                org: org,
+                username: issueCreator
+              });
+              
+              console.log(`${issueCreator} is an organization member - issue will remain open`);
+              
+            } catch (error) {
+              // User is not an org member
+              console.log(`${issueCreator} is not an organization member - closing issue`);
+              
+              // Add a comment explaining why the issue is being closed
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `Hi @${issueCreator},
+
+Thank you for your interest in the Home Assistant roadmap!
+
+This repository is restricted to Open Home Foundation staff and authorized contributors only. Community members cannot directly create roadmap opportunities.
+
+**How to influence the roadmap:**
+1. 🚀 Submit your ideas to the [Feature Requests](https://github.com/orgs/home-assistant/discussions)
+2. 🗳️ Vote and discuss on existing feature requests
+3. 👀 The product team regularly reviews popular requests and creates roadmap opportunities based on community needs
+
+Your input is valuable and helps shape Home Assistant's future! Please share your ideas in the Feature Requests where they can be properly discussed and evaluated by the community and product team.
+
+If you believe you should have access to create roadmap opportunities, please contact the Open Home Foundation team.
+
+*This issue will now be automatically closed.*`
+              });
+              
+              // Close the issue
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                state: 'closed',
+                state_reason: 'not_planned'
+              });
+              
+              // Add labels to indicate why it was closed
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                labels: ['non-member', 'auto-closed']
+              });
+            }
