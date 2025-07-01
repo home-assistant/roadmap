@@ -1,6 +1,7 @@
 name: Roadmap Opportunity
 description: For Open Home Foundation staff only - Propose a strategic opportunity for the Home Assistant roadmap
 type: Opportunity
+labels: ["status: proposal"]
 body:
   - type: markdown
     attributes:
