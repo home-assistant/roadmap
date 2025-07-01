@@ -16,9 +16,9 @@ jobs:
           script: |
             const issueCreator = context.payload.issue.user.login;
             const org = context.repo.owner;
-            
+
             console.log(`Checking if ${issueCreator} is a member of ${org}`);
-            
+
             try {
               // Check if user is an organization member
               await github.rest.orgs.checkMembershipForUser({
@@ -37,22 +37,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.issue.number,
-                body: `Hi @${issueCreator},
-
-Thank you for your interest in the Home Assistant roadmap!
-
-This repository is restricted to Open Home Foundation staff and authorized contributors only. Community members cannot directly create roadmap opportunities.
-
-**How to influence the roadmap:**
-1. 🚀 Submit your ideas to the [Feature Requests](https://github.com/orgs/home-assistant/discussions)
-2. 🗳️ Vote and discuss on existing feature requests
-3. 👀 The product team regularly reviews popular requests and creates roadmap opportunities based on community needs
-
-Your input is valuable and helps shape Home Assistant's future! Please share your ideas in the Feature Requests where they can be properly discussed and evaluated by the community and product team.
-
-If you believe you should have access to create roadmap opportunities, please contact the Open Home Foundation team.
-
-*This issue will now be automatically closed.*`
+                body: `Hi @${issueCreator},\n\nThank you for your interest in the Home Assistant roadmap!\n\nThis repository is restricted to Open Home Foundation staff and authorized contributors only. Community members cannot directly create roadmap opportunities.\n\n**How to influence the roadmap:**\n1. 🚀 Submit your ideas to the [Feature Requests](https://github.com/orgs/home-assistant/discussions)\n2. 🗳️ Vote and discuss on existing feature requests\n3. 👀 The product team regularly reviews popular requests and creates roadmap opportunities based on community needs\n\nYour input is valuable and helps shape Home Assistant's future! Please share your ideas in the Feature Requests where they can be properly discussed and evaluated by the community and product team.\n\nIf you believe you should have access to create roadmap opportunities, please contact the Open Home Foundation team.\n\n*This issue will now be automatically closed.*`
               });
               
               // Close the issue
