@@ -82,7 +82,7 @@ The Open Home Foundation manages roadmap opportunities through this structured p
 
 ## 🎯 Current Roadmap
 
-View our active roadmap opportunities and their progress on our [Project Board](#) (tba).
+View our active roadmap opportunities and their progress on our [Project Board](https://github.com/orgs/home-assistant/projects/29).
 
 ## 💬 Get involved
 
@@ -90,7 +90,7 @@ Want to help shape the future of Home Assistant? Here's how:
 
 - **Submit Feature Requests**: Share your ideas in the [Feature Requests repository](https://github.com/home-assistant/feature-requests)
 - **Vote and Discuss**: Support feature requests that align with your needs
-- **Contribute Code**: Help implement roadmap opportunities by contributing to [Home Assistant Core](https://github.com/home-assistant/core)
+- **Contribute Code**: Help implement roadmap opportunities by contributing to the [Home Assistant repositories](https://github.com/home-assistant)
 - **Follow Progress**: Watch this repository to stay updated on roadmap developments
 
 Remember: The roadmap is driven by community needs! Your feature requests directly influence what the product team prioritizes.
