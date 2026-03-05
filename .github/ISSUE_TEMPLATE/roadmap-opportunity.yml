@@ -7,7 +7,7 @@ body:
       value: |
         ## ⚠️ RESTRICTED ACCESS
 
-        **This form is restricted to Open Home Foundation staff only.**
+        **This form is restricted to Open Home Foundation staff and authorized contributors only.**
 
         If you are a community member wanting to suggest a feature or improvement, please use [Feature Requests](https://github.com/orgs/home-assistant/discussions) instead. The product team monitors these and incorporates relevant signals into roadmap items.
 
