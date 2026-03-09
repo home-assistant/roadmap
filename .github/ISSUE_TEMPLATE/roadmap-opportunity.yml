@@ -1,4 +1,4 @@
-name: Roadmap Item
+name: Roadmap Opportunity
 description: For Open Home Foundation staff only - Log an idea or propose a roadmap opportunity
 type: Opportunity
 body:
@@ -26,16 +26,31 @@ body:
     attributes:
       label: Problem statement
       description: |
-        Who is affected and why this matters. At the idea stage, a few sentences is enough. For opportunities heading to the betting table, be specific about the pain points and their impact.
+        Describes the problem you want to solve. Include who is impacted by the problem and why solving it matters to them or to OHF. Clearly link back to OHF's goals.
     validations:
       required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope & Boundaries
+      description: |
+        Define what we plan to achieve, and what we already consider out of scope for this opportunity. Be specific about what is included and what is explicitly excluded to prevent scope creep.
+      placeholder: |
+        #### In scope
+          -
+
+        #### Not in scope
+          -
+    validations:
+      required: false
 
   - type: textarea
     id: foreseen_solution
     attributes:
       label: Foreseen solution
       description: |
-        A rough direction, enough to understand the approach. This is a starting point for discussion, not a specification. Leave blank if you don't have a solution direction yet.
+        The foreseen solution solving the problem described above, shaped enough to understand what the solution is and what it means to build it. This is a starting point for discussion and an eventual decision on if we want to build it, not a detailed specification. A low-fidelity way of visualizing the solution is welcome.
     validations:
       required: false
 
@@ -45,15 +60,6 @@ body:
       label: Community signals
       description: |
         What prompted this? Link to any Discussions, feature requests, Discord threads, or other signals that informed this item. Leave blank if this came from internal thinking.
-    validations:
-      required: false
-
-  - type: textarea
-    id: figma_explorations
-    attributes:
-      label: Figma explorations
-      description: |
-        Link(s) to any public Figma work — wireframes, mockups, or explorations — that support or illustrate this item. Leave blank if none yet.
     validations:
       required: false
 
