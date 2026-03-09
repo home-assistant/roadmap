@@ -1,7 +1,6 @@
 name: Roadmap Opportunity
-description: For Open Home Foundation staff only - Propose a strategic opportunity for the Home Assistant roadmap
+description: For Open Home Foundation staff only - Log an idea or propose a roadmap opportunity
 type: Opportunity
-labels: ["status: proposal"]
 body:
   - type: markdown
     attributes:
@@ -10,55 +9,24 @@ body:
 
         **This form is restricted to Open Home Foundation staff and authorized contributors only.**
 
-        If you are a community member wanting to influence the roadmap, please submit your ideas to the [Feature Requests](https://github.com/orgs/home-assistant/discussions) instead. The product team monitors feature requests and incorporates them into roadmap opportunities.
+        If you are a community member wanting to suggest a feature or improvement, please use [Feature Requests](https://github.com/orgs/home-assistant/discussions) instead. The product team monitors these and incorporates relevant signals into roadmap items.
 
         ---
 
         ### For authorized contributors
 
-        Thanks for proposing a roadmap opportunity! 🗺️
+        Thanks for adding to the roadmap! 🗺️
 
-        Roadmap opportunities represent significant strategic initiatives that will be tracked on our project boards and broken down into actionable work. These are larger than individual features and require careful planning and coordination.
+        This form covers everything from early ideas and hunches to fully shaped opportunities ready for the betting table. Fill in what you can — not every field is relevant at every stage.
 
-        Before submitting, please:
-        - Verify you are authorized to create roadmap opportunities
-        - Search existing issues to avoid duplicates
-        - Ensure this is a strategic opportunity, not a single feature request
-        - Consider if this aligns with Home Assistant's values: local control, privacy, choice, and sustainability
-        - Reference any related feature requests that this opportunity addresses
+        Before submitting, please search existing issues to avoid duplicates.
 
   - type: textarea
-    id: goals
+    id: problem_statement
     attributes:
-      label: Goals
+      label: Problem statement
       description: |
-        Provide a short description of the goal of the opportunity and the rationale behind it.
-
-        What problem does this opportunity solve? Why is it important for Home Assistant's future?
-      placeholder: |
-        Example:
-        - Improve the onboarding experience for new users by reducing setup complexity
-        - Enable Home Assistant to better serve non-technical users
-        - Reduce support burden by making common tasks more intuitive
-    validations:
-      required: true
-
-  - type: textarea
-    id: vision
-    attributes:
-      label: Vision
-      description: |
-        Provide a longer description of what we want to achieve, with anything that can be used to support the vision, a prototype, or simply a write-up.
-
-        Paint a picture of what success looks like. Include any supporting materials, mockups, research, or examples.
-      placeholder: |
-        Example:
-        We envision a streamlined onboarding flow that guides new users through:
-        1. Initial setup with automatic discovery of local devices
-        2. Creation of their first automation using a wizard-style interface
-        3. Dashboard customization with suggested cards based on their devices
-
-        This would reduce the time to first "wow moment" from hours to minutes...
+        Describes the problem you want to solve. Include who is impacted by the problem and why solving it matters to them or to OHF. Clearly link back to OHF's goals.
     validations:
       required: true
 
@@ -67,112 +35,75 @@ body:
     attributes:
       label: Scope & Boundaries
       description: |
-        Define what we plan to achieve, and what we already consider out of scope for this opportunity.
-
-        Be specific about what is included and what is explicitly excluded to prevent scope creep.
+        Define what we plan to achieve, and what we already consider out of scope for this opportunity. Be specific about what is included and what is explicitly excluded to prevent scope creep.
       placeholder: |
-        **In Scope:**
-        - New user onboarding flow
-        - Device auto-discovery improvements
-        - Basic automation creation wizard
-        - Default dashboard improvements
+        #### In scope
+          -
 
-        **Out of Scope:**
-        - Advanced automation features
-        - Custom component installation
-        - Multi-user account management
-        - Mobile app changes (separate opportunity)
-    validations:
-      required: true
-
-  - type: textarea
-    id: plan
-    attributes:
-      label: Plan
-      description: |
-        How we plan to achieve what we want to achieve. Include the breakdown into Epics and the prioritization between them.
-
-        This should be a high-level roadmap of the major work areas and their dependencies.
-      placeholder: |
-        **Epic 1: Discovery & Device Setup** (Priority: High)
-        - Improve automatic device discovery
-        - Streamline device configuration UI
-        - Add device setup verification
-
-        **Epic 2: Automation Wizard** (Priority: High, depends on Epic 1)
-        - Create wizard-style automation builder
-        - Add common automation templates
-        - Implement guided setup flow
-
-        **Epic 3: Dashboard Optimization** (Priority: Medium)
-        - Smart default dashboard generation
-        - Contextual card suggestions
-        - Layout optimization for new users
-    validations:
-      required: true
-
-  - type: textarea
-    id: related_feature_requests
-    attributes:
-      label: Related Feature Requests
-      description: |
-        List the feature requests from the Feature Requests repository that this opportunity addresses.
-
-        This helps demonstrate community demand and ensures we're building what users need.
-      placeholder: |
-        - https://github.com/orgs/home-assistant/discussions/123
-        - https://github.com/orgs/home-assistant/discussions/456
-        - https://github.com/orgs/home-assistant/discussions/789
+        #### Not in scope
+          -
     validations:
       required: false
 
   - type: textarea
-    id: additional_context
+    id: foreseen_solution
     attributes:
-      label: Additional Context
+      label: Foreseen solution
       description: |
-        Any additional information, links, research, or context that would be helpful.
+        The foreseen solution solving the problem described above, shaped enough to understand what the solution is and what it means to build it. This is a starting point for discussion and an eventual decision on if we want to build it, not a detailed specification. A low-fidelity way of visualizing the solution is welcome.
+    validations:
+      required: false
 
-        Include links to related issues, research, prototypes, etc.
+  - type: textarea
+    id: community_feedback
+    attributes:
+      label: Community signals
+      description: |
+        What prompted this? Link to any Discussions, feature requests, Discord threads, or other signals that informed this item. Leave blank if this came from internal thinking.
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks_and_open_questions
+    attributes:
+      label: Risks & open questions
+      description: |
+        What are we uncertain about? Are there technical, UX, or strategic risks? How do we plan to address or investigate them?
+    validations:
+      required: false
+
+  - type: textarea
+    id: appetite
+    attributes:
+      label: Appetite
+      description: |
+        Roughly how much time are we willing to invest in this opportunity? Use relative sizing (e.g. small / medium / large) or cycle count. This is not a commitment but rather a signal to help prioritise at the betting table.
       placeholder: |
-        - User research findings: [link]
-        - Prototype/mockup: [link]
-        - Similar implementations in other projects: [links]
-        - Technical design documents: [link]
+        Example: Medium — roughly 1–2 cycles of focused work across frontend and core.
+    validations:
+      required: false
+
+  - type: textarea
+    id: execution_issues
+    attributes:
+      label: Execution issues
+      description: |
+        Populated once a bet is approved. Add links to the tracking issues created in core, frontend, and any other relevant repositories.
+      placeholder: |
+        - home-assistant/core#12345
+        - home-assistant/frontend#67890
     validations:
       required: false
 
   - type: textarea
     id: decision_log
     attributes:
-      label: Decision Log
+      label: Decision log
       description: |
-        Any big decisions we took along the way as a log, so that contributors can reflect on them.
-
-        This section will be updated as the opportunity progresses. Leave empty for now if this is a new proposal.
-      placeholder: |
-        **2024-06-30**: Decided to focus on web interface first, mobile app improvements will be separate opportunity
-        **2024-07-15**: Chose wizard-style interface over single-page setup based on user research
-        **2024-08-01**: Agreed to integrate with existing device discovery rather than building new system
-    validations:
-      required: false
-
-  - type: textarea
-    id: qa
-    attributes:
-      label: Q&A
-      description: |
-        Any recurring questions that pop up, answered by the opportunity owner so that we can reference them back.
-
-        This helps address common concerns and reduces repetitive discussions.
-      placeholder: |
-        **Q: Will this affect existing users' setups?**
-        A: No, this only affects new user onboarding. Existing configurations remain unchanged.
-
-        **Q: How does this relate to the mobile app experience?**
-        A: Mobile app improvements are considered a separate opportunity. This focuses on web interface only.
-
-        **Q: What about users who prefer manual configuration?**
-        A: Advanced/manual configuration will remain available. This adds a guided path, doesn't replace existing options.
+        Record key decisions, pivots, and betting table outcomes with dates. This helps contributors understand the history of the item and reduces repetitive discussions.
+      value: |
+        | Date | Decision | Outcome |
+        |------|----------|---------|
+        |      |          |         |
     validations:
       required: false
