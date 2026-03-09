@@ -36,7 +36,7 @@ body:
       label: Scope & Boundaries
       description: |
         Define what we plan to achieve, and what we already consider out of scope for this opportunity. Be specific about what is included and what is explicitly excluded to prevent scope creep.
-      placeholder: |
+      value: |
         #### In scope
           -
 
