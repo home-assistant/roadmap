@@ -31,6 +31,15 @@ body:
       required: true
 
   - type: textarea
+    id: community_feedback
+    attributes:
+      label: Community signals
+      description: |
+        What prompted this? Link to any Discussions, feature requests, Discord threads, or other signals that informed this item. Leave blank if this came from internal thinking.
+    validations:
+      required: false
+
+  - type: textarea
     id: scope
     attributes:
       label: Scope & Boundaries
@@ -38,10 +47,10 @@ body:
         Define what we plan to achieve, and what we already consider out of scope for this opportunity. Be specific about what is included and what is explicitly excluded to prevent scope creep.
       value: |
         #### In scope
-          -
+        -
 
         #### Not in scope
-          -
+        -
     validations:
       required: false
 
@@ -51,15 +60,6 @@ body:
       label: Foreseen solution
       description: |
         The foreseen solution solving the problem described above, shaped enough to understand what the solution is and what it means to build it. This is a starting point for discussion and an eventual decision on if we want to build it, not a detailed specification. A low-fidelity way of visualizing the solution is welcome.
-    validations:
-      required: false
-
-  - type: textarea
-    id: community_feedback
-    attributes:
-      label: Community signals
-      description: |
-        What prompted this? Link to any Discussions, feature requests, Discord threads, or other signals that informed this item. Leave blank if this came from internal thinking.
     validations:
       required: false
 
